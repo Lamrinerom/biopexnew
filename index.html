@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -21,12 +22,17 @@
             <div class="top-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-3">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 order-1 order-sm-1 order-md-1 order-lg-1 order-xl-1 d-flex align-items-center taglogo">
+                          <div class="mobilemenu-section nodesktop">
+                            <div class="toggle-button">
+                              <button class="btn mmbutton"></button>
+                            </div>
+                          </div>
                             <div class="logo">
                                 <a href="index.html"><img src="assets/images/biologo1.png" alt="Biopex Logo"></a>
                             </div> 
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 col-12 order-3 order-sm-3 order-md-3 order-lg-2 order-xl-2">
                             <div class="search-bar">
                                 <div class="searchInput">
                                     <input type="text" placeholder="Search product here..">
@@ -37,13 +43,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 order-2 order-sm-2 order-md-2 order-lg-3 order-xl-3 cartsection">
                             <div class="user-services">
                                 <a href="login.html" class="account-section">
                                     <div class="icon1"></div>
                                     <div class="accontent">
                                         <span class="sn">Sign In</span>
-                                        <p class="acc dropdown-toggle">Account</p>
+                                        <p class="acc dropdown-toggle"><span>Account</span></p>
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <div class="infouser">
@@ -74,39 +80,34 @@
             </div>
             <div class="bottom-header">
                 <div class="container">
-                    <nav class="navbar navbar-expand-lg main-nav">
+                    <nav class="main-nav">
                         <div class="container-fluid p-0">
-                          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button> -->
-                          <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                              <li class="nav-item">
+                            <ul class="main-menu">
+                              <li class="main-menu-list">
                                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                               </li>
-                              <li class="nav-item">
+                              <li class="main-menu-list">
                                 <a class="nav-link" href="about.html">Biopex Categories</a>
                               </li>
-                              <li class="nav-item">
+                              <li class="main-menu-list">
                                 <a class="nav-link" href="shop.html">A to Z Products</a>
                               </li>
-                              <li class="nav-item">
+                              <li class="main-menu-list">
                                 <a class="nav-link" href="blog.html">About Us</a>
                               </li>
-                              <li class="nav-item">
+                              <li class="main-menu-list">
                                 <a class="nav-link" href="contact.html">Contact Us</a>
                               </li>
-                              <li class="nav-item">
+                              <li class="main-menu-list">
                                 <a class="nav-link" href="contact.html">My Account</a>
                               </li>
                             </ul>
-                          </div>
                         </div>
                     </nav>
                 </div>
             </div>
         </header>
-        <section class="banner">
+        <section class="banner nomobile">
             <div class="container banner-content">
                 <div class="banner-item active">
                   <div class="banner-col">
@@ -164,7 +165,7 @@
                 </div>
             </div>
         </section>
-        <section class="e-con-inner">
+        <section class="e-con-inner nomobile">
           <div class="container">
             <div class="row">
               <div class="col-xl-4">
@@ -197,7 +198,7 @@
           </div>
         </section>
         <section class="category">
-          <div class="carousel-container">
+          <div class="container">
             <h1 class="section-title">Shop by Category</h1>
             <!-- Navigation Arrows -->
             <!-- <button class="carousel-btn prev">❮</button>
@@ -322,7 +323,7 @@
         </section>
 
         <section class="best-seller" id="best-sellers-carousel">
-          <div class="custom-carousel-container">
+          <div class="container">
             <div class="titleofsection">
               <h2 class="section-title">Best Sellers</h2>
               <p class="smallte">
@@ -793,15 +794,19 @@
             </div>
           </div>
         </section>
+
        <section class="tabing-product">
         <div class="container">
           <div class="titleofsection nav" id="pills-tab" role="tablist">
             <h2 class="section-title">Top Categories</h2>
             <p class="smallte nav-item" role="presentation">
-              <button class="btn nav-link active" id="pills-one-tab" data-bs-toggle="pill" data-bs-target="#pills-one" type="button" role="tab" aria-controls="pills-one" aria-selected="true">Home</button>
+              <button class="btn nav-link active" id="pills-one-tab" data-bs-toggle="pill" data-bs-target="#pills-one" type="button" role="tab" aria-controls="pills-one" aria-selected="true">Bath and Circulators</button>
             </p>
             <p class="smallte nav-item" role="presentation">
-              <button class="btn nav-link" id="pills-two-tab" data-bs-toggle="pill" data-bs-target="#pills-two" type="button" role="tab" aria-controls="pills-two" aria-selected="false">Home</button>
+              <button class="btn nav-link" id="pills-two-tab" data-bs-toggle="pill" data-bs-target="#pills-two" type="button" role="tab" aria-controls="pills-two" aria-selected="false">Centrifuges</button>
+            </p>
+            <p class="smallte nav-item" role="presentation">
+              <button class="btn nav-link" id="pills-three-tab" data-bs-toggle="pill" data-bs-target="#pills-three" type="button" role="tab" aria-controls="pills-three" aria-selected="false">Microscopes</button>
             </p>
             <a href="shop.html" class="view-all-btn">View All</a>
         </div>
@@ -823,8 +828,10 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Circulating Water Bath WP Series WP-100(110V/60Hz) </a></h4>
-                    <p class="price"><span class="old-price">$1500.00</span>$1,200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price">
+                      <span class="old-price">$1500.00</span>$1,200.00 
+                      <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
                 </div>
               </div>
               </div>
@@ -844,8 +851,9 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Blood Bank Refrigerator BBR-1000 Series </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                      <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
                 </div>
               </div>
               </div>
@@ -865,8 +873,10 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Class II A2 Biological Safety Cabinets </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                      <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
                 </div>
               </div>
               </div>
@@ -886,8 +896,10 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Digital Cooking Oil <br> Tester OT-100 </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                      <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
                 </div>
               </div>
               </div>
@@ -907,8 +919,10 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Fume Hood <br> TFH-2700 </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                      <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
                 </div>
               </div>
               </div>
@@ -930,8 +944,10 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">High Temperature Viscometer HVR-1000 Series </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
                 </div>
               </div>
               </div>
@@ -951,8 +967,10 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Laboratory Glassware Washers TGW-5000 </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                     <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                   
                 </div>
               </div>
               </div>
@@ -972,8 +990,10 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Micro Spectrophotometer MS-2000 Series </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
                 </div>
               </div>
               </div>
@@ -993,8 +1013,10 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Moisture Balance TMB-1000 Series </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
                 </div>
               </div>
               </div>
@@ -1014,14 +1036,220 @@
                   </div>
                   <div class="tc-content">
                     <h4><a href="product-details.html">Oxygen Concentrator TOC-3005 110V </a></h4>
-                    <p class="price"><span class="old-price">$10500.00</span>$90200.00</p>
-                    <a href="product-details.html" class="add-to-cart-btn">Add to Cart</a>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
+                </div>
+              </div>
+              </div>
+          </div>
+          <div class="row tab-pane fade show mt-4" id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab" tabindex="0">
+            <div class="tc-col">
+                <div class="tc-cards">
+                  <div class="tc-image">
+                    <img src="assets/images/sample/WP-100-Circulating-Water-Bath.png" alt="Best Seller 1">
+                  </div>
+                  <div class="tc-rating-section">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="tc-rating-number">4.6</span>
+                    <span class="tc-review-count">(127 reviews)</span>
+                  </div>
+                  <div class="tc-content">
+                    <h4><a href="product-details.html">Circulating Water Bath WP Series WP-100(110V/60Hz) </a></h4>
+                    <p class="price"><span class="old-price">$1500.00</span>$1,200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
+                </div>
+              </div>
+              </div>
+              <div class="tc-col">
+                <div class="tc-cards">
+                  <div class="tc-image">
+                    <img src="assets/images/sample/Blood-Bank-Refrigerator-BBR-1000-Series.png" alt="Best Seller 1">
+                  </div>
+                  <div class="tc-rating-section">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="tc-rating-number">4.6</span>
+                    <span class="tc-review-count">(127 reviews)</span>
+                  </div>
+                  <div class="tc-content">
+                    <h4><a href="product-details.html">Blood Bank Refrigerator BBR-1000 Series </a></h4>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
+                </div>
+              </div>
+              </div>
+              <div class="tc-col">
+                <div class="tc-cards">
+                  <div class="tc-image">
+                    <img src="assets/images/sample/Class-II-A2-Biological-Safety-Cabinets.png" alt="Best Seller 1">
+                  </div>
+                  <div class="tc-rating-section">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="tc-rating-number">4.6</span>
+                    <span class="tc-review-count">(127 reviews)</span>
+                  </div>
+                  <div class="tc-content">
+                    <h4><a href="product-details.html">Class II A2 Biological Safety Cabinets </a></h4>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
+                </div>
+              </div>
+              </div>
+              <div class="tc-col">
+                <div class="tc-cards">
+                  <div class="tc-image">
+                    <img src="assets/images/sample/Digital-Cooking-Oil-Tester_OT-100.png" alt="Best Seller 1">
+                  </div>
+                  <div class="tc-rating-section">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="tc-rating-number">4.6</span>
+                    <span class="tc-review-count">(127 reviews)</span>
+                  </div>
+                  <div class="tc-content">
+                    <h4><a href="product-details.html">Digital Cooking Oil <br> Tester OT-100 </a></h4>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
+                </div>
+              </div>
+              </div>
+              <div class="tc-col">
+                <div class="tc-cards">
+                  <div class="tc-image">
+                    <img src="assets/images/sample/Fume-Hood-TFH-2700.png" alt="Best Seller 1">
+                  </div>
+                  <div class="tc-rating-section">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="tc-rating-number">4.6</span>
+                    <span class="tc-review-count">(127 reviews)</span>
+                  </div>
+                  <div class="tc-content">
+                    <h4><a href="product-details.html">Fume Hood <br> TFH-2700 </a></h4>
+                    <p class="price"><span class="old-price">$10500.00</span>$90200.00
+                    <a href="product-details.html" class="add-to-cart-btn cart-icon"></a>
+                    </p>
+                    
                 </div>
               </div>
               </div>
           </div>
         </div>
        </section>
+       <footer>
+         <div class="top-footer">
+            <div class="container bottomline">
+               <div class="row">
+                  <div class="col-xl-6">
+                      <div class="logo-image">
+                        <a href="index.html"><img src="assets/images/biologo1white.png" alt="Biopex Logo"></a>
+                      </div>
+                  </div>
+                  <div class="col-xl-6">
+                      <div class="social-icons">
+                        <span class="fu"><p>Follow Us</p></span>
+                        <a href="#"><span class="fa facebook"></span></a>
+                        <a href="#"><span class="fa twitter"></span></a>
+                        <a href="#"><span class="fa instagram"></span></a>
+                        <a href="#"><span class="fa linkedin"></span></a>
+                      </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="middle-footer">
+            <div div class="container">
+              <div class="row">
+                <div class="col-xl-4">
+                    <div class="footer-widget">
+                      <h4 class="fw-title">Contact Us</h4>
+                      <ul class="fw-links">
+                        <li class="cuicons address">Address : <p> 123, Main Street, City, Country</p></li>
+                        <li class="cuicons mail">E-Mail :<a href="mailto:info@biopex.com">info@biopex.com</a></li>
+                        <li class="cuicons phone">Phone :<a href="tel:+1234567890">+1234567890</a></li>
+                        <li class="cuicons whatsappcu">Whatsapp :<a href="https://wa.me/1234567890">+1234567890</a></li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="footer-widget">
+                      <h4 class="fw-title">Quick Links</h4>
+                      <ul class="fw-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="allcategories.html">Biopex Categories</a></li>
+                        <li><a href="atozproduct.html">A to Z Products</a></li>
+                        <li><a href="aboutus.html"> About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="sitemap.html">Site Map</a></li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                  <div class="footer-widget">
+                    <h4 class="fw-title">Customer Service</h4>
+                    <ul class="fw-links">
+                      <li><a href="shipping.html">Shipping & Delivery</a></li>
+                      <li><a href="returns.html">Returns & Exchanges</a></li>
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                      <li><a href="terms.html">Terms & Conditions</a></li>
+                      <!-- <li><a href="">Order Details</a></li> -->
+                      <li><a href="">Track My order</a></li>
+                      <li><a href="">Wishlist</a></li>
+                      <li><a href="faq.html">FAQ</a></li>
+                  </div>
+                </div>
+                <div class="col-xl-4">
+                  <div class="footer-widget">
+                    <h4 class="fw-title">Newsletter</h4>
+                    <p class="fwcominfo">Biopex is a trusted provider of high‑quality laboratory and medical equipment, delivering reliable products for research, diagnostics, and healthcare.</p>
+                    <p class="fwp">Subscribe to our newsletter to get the latest updates and offers.</p>
+                    <form class="newsletter-form">
+                      <input type="email" placeholder="Enter your email" required>
+                      <button type="submit">Subscribe</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+         <div class="bottom-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <p class="copyright-text">© 2025 Biopex. All Rights Reserved.</p>
+                </div>
+              </div>
+            </div>
+         </div>
+       </footer>
     </div>
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

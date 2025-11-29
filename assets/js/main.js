@@ -250,134 +250,58 @@ function showSuggestions(list){
 // ------------------------------------------Best seller section
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  (function () {
-    "use strict";
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.bs-carousel');
+  const prevBtn = document.querySelector('.bs-prev');
+  const nextBtn = document.querySelector('.bs-next');
 
-    const carousel = document.getElementById("carousel-best-sellers");
-    const dotsContainer = document.getElementById("dots-best-sellers");
-    const nextBtn = document.querySelector(".bs-next");
-    const prevBtn = document.querySelector(".bs-prev");
+  const card = carousel.querySelector('.bs-card');
+  const cardWidth = () => card.getBoundingClientRect().width + 16; // 16 = gap
 
-    // Debug: check buttons
-    console.log("nextBtn:", nextBtn);
-    console.log("prevBtn:", prevBtn);
+  let holdInterval = null;
 
-    if (!carousel || !nextBtn || !prevBtn || !dotsContainer) {
-      console.error("Best-seller carousel: missing DOM elements");
-      return;
-    }
+  function scrollByCards(direction) {
+    carousel.scrollBy({ left: direction * cardWidth(), behavior: 'smooth' });
+  }
 
-    let index = 0;
-    let isTransitioning = false;
-    let cardWidth = 0;
+  // Click scroll
+  prevBtn.addEventListener('click', () => scrollByCards(-1));
+  nextBtn.addEventListener('click', () => scrollByCards(1));
 
-    function updateCardWidth() {
-      const style = window.getComputedStyle(carousel);
-      const gap = parseFloat(style.gap) || 0;
-      cardWidth = carousel.children[0].offsetWidth + gap;
-    }
+  // Hold to slide
+  function startHold(direction) {
+    if (holdInterval) return;
+    holdInterval = setInterval(() => {
+      carousel.scrollBy({ left: direction * 10, behavior: 'auto' });
+    }, 16);
+  }
+  function stopHold() {
+    clearInterval(holdInterval);
+    holdInterval = null;
+  }
 
-    const originalCards = Array.from(carousel.children);
-    const originalCount = originalCards.length;
-    originalCards.forEach(card => {
-      const clone = card.cloneNode(true);
-      carousel.appendChild(clone);
-    });
+  ['mousedown', 'touchstart'].forEach(ev => {
+    prevBtn.addEventListener(ev, e => { e.preventDefault(); startHold(-1); });
+    nextBtn.addEventListener(ev, e => { e.preventDefault(); startHold(1); });
+  });
+  ['mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach(ev => {
+    prevBtn.addEventListener(ev, stopHold);
+    nextBtn.addEventListener(ev, stopHold);
+  });
 
-    updateCardWidth();
-
-    for (let i = 0; i < originalCount; i++) {
-      const dot = document.createElement("span");
-      dot.classList.add("dot");
-      if (i === 0) dot.classList.add("active");
-      dotsContainer.appendChild(dot);
-      dot.addEventListener("click", () => {
-        if (!isTransitioning) {
-          index = i;
-          updateCarousel();
-        }
-      });
-    }
-
-    const dots = dotsContainer.querySelectorAll(".dot");
-    let autoSlide = setInterval(slideNext, 6000);
-
-    function updateCarousel() {
-      carousel.style.transition =
-        "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
-      carousel.style.transform = `translateX(-${index * cardWidth}px)`;
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index % originalCount);
-      });
-      isTransitioning = true;
-    }
-
-    function slideNext() {
-      if (isTransitioning) return;
-      index++;
-      if (index >= originalCount) {
-        updateCarousel();
-        setTimeout(() => {
-          carousel.style.transition = "none";
-          index = 0;
-          carousel.style.transform = "translateX(0px)";
-          carousel.offsetHeight;
-          carousel.style.transition =
-            "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
-          isTransitioning = false;
-        }, 600);
-      } else {
-        updateCarousel();
-        setTimeout(() => {
-          isTransitioning = false;
-        }, 600);
-      }
-    }
-
-    function slidePrev() {
-      if (isTransitioning) return;
-      if (index === 0) {
-        carousel.style.transition = "none";
-        index = originalCount - 1;
-        carousel.style.transform = `translateX(-${index * cardWidth}px)`;
-        carousel.offsetHeight;
-        carousel.style.transition =
-          "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
-        setTimeout(() => {
-          index--;
-          updateCarousel();
-          setTimeout(() => {
-            isTransitioning = false;
-          }, 600);
-        }, 50);
-      } else {
-        index--;
-        updateCarousel();
-        setTimeout(() => {
-          isTransitioning = false;
-        }, 600);
-      }
-    }
-
-    nextBtn.addEventListener("click", slideNext);
-    prevBtn.addEventListener("click", slidePrev);
-
-    const container = document.querySelector('[data-carousel="best-sellers"]');
-    if (container) {
-      container.addEventListener("mouseenter", () => clearInterval(autoSlide));
-      container.addEventListener("mouseleave", () => {
-        autoSlide = setInterval(slideNext, 6000);
-      });
-    }
-
-    let resizeTimeout;
-    window.addEventListener("resize", () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        updateCardWidth();
-        updateCarousel();
-      }, 250);
-    });
-  })();
+  // Optional: drag to slide
+  let isDown = false, startX, scrollLeft;
+  carousel.addEventListener('mousedown', e => {
+    isDown = true;
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+  window.addEventListener('mouseup', () => isDown = false);
+  carousel.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    carousel.scrollLeft = scrollLeft - walk;
+  });
 });

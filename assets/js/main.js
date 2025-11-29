@@ -73,28 +73,41 @@ function showSuggestions(list){
 // ---------------------------------------------------------------------------bannee00000
 
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const banners = document.querySelectorAll('.banner-item');
-    let currentIndex = 0;
-    const changeInterval = 7500; // 7.5 seconds
+ document.addEventListener('DOMContentLoaded', () => {
+  const banners = document.querySelectorAll('.banner-item');
+  const dots = document.querySelectorAll('.dot');
+  let currentIndex = 0;
+  const changeInterval = 7500;
+
+  function showBanner(index) {
+    // Update banners
+    banners.forEach((banner, i) => {
+      banner.classList.toggle('active', i === index);
+    });
     
-    function showBanner(index) {
-      banners.forEach((banner, i) => {
-        banner.classList.toggle('active', i === index);
-      });
-    }
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
 
-    function nextBanner() {
-      currentIndex = (currentIndex + 1) % banners.length;
-      showBanner(currentIndex);
-    }
-
-    // Initialize first banner
+  function nextBanner() {
+    currentIndex = (currentIndex + 1) % banners.length;
     showBanner(currentIndex);
+  }
 
-    // Start auto rotation
-    setInterval(nextBanner, changeInterval);
+  // Dot click handler
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      showBanner(currentIndex);
+    });
   });
+
+  showBanner(currentIndex);
+  setInterval(nextBanner, changeInterval);
+});
+
 // ------------------------------------------Slider category
 
 

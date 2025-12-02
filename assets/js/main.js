@@ -289,3 +289,35 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.scrollLeft = scrollLeft - walk;
   });
 });
+// -------------------------------------------Best seller
+
+$(document).ready(function() {
+    $('.slick-carousel').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true, // Enable navigation arrows
+        autoplay: true,
+        autoplaySpeed: 2500, // Slide every 2.5 seconds (customize as needed)
+        // prevArrow: '<button type="button" class="slick-prev" style="background: #1d297c; color: #fff; border: none; border-radius: 18px; width: 36px; height: 36px; font-size: 20px; position: absolute; top: 45%; left: -40px; z-index: 3;"></button>',
+        // nextArrow: '<button type="button" class="slick-next" style="background: #1d297c; color: #fff; border: none; border-radius: 18px; width: 36px; height: 36px; font-size: 20px; position: absolute; top: 45%; right: -40px; z-index: 3;"></button>',
+        responsive: [
+           {
+                breakpoint: 1400,
+                settings: { slidesToShow: 6 }
+            },
+            {
+                breakpoint: 1200,
+                settings: { slidesToShow: 3 }
+            },
+            {
+                breakpoint: 768,
+                settings: { slidesToShow: 2 }
+            },
+            {
+                breakpoint: 480,
+                settings: { slidesToShow: 2 }
+            }
+        ]
+    });
+});

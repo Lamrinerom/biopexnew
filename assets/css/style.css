@@ -2055,3 +2055,33 @@ color: #667eea;
   margin-bottom: 16px !important;
   text-align: justify;
 }
+/* ----------------------------------return Policy- */
+.retpoly{
+  padding-bottom: 70px;
+}
+.retpoly .retpoly-content p{
+  margin-bottom: 16px !important;
+  text-align: justify;
+}
+/* ----------------------------------Terms and conditions- */
+.tac{
+  padding-bottom: 70px;
+}
+.tac .tac-content p{
+  margin-bottom: 16px !important;
+  text-align: justify;
+}
+.tac .tac-content .tac-titles{
+  font-size: 20px;
+  font-weight: 500;
+  color: #319ebe;
+  margin-bottom: 8px;
+}
+/* ----------------------------------Thank you- */
+.tu-section{
+  padding-bottom: 70px;
+}
+.tu-section .tu-content p{
+  margin-bottom: 16px !important;
+  text-align: justify;
+}
